@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+:root{
+    --clr-Red: hsl(1, 90%, 64%);
+    --clr-Blue: hsl(219, 85%, 26%);
+
+    --clr-White: hsl(0, 0%, 100%);
+    --clr-Very-light-grayish-blue: hsl(210, 60%, 98%);
+    --clr-Light-grayish-blue-1: hsl(211, 68%, 94%);
+    --clr-Light-grayish-blue-2: hsl(205, 33%, 90%);
+    --clr-Grayish-blue: hsl(219, 14%, 63%);
+    --clr-Dark-grayish-blue: hsl(219, 12%, 42%);
+    --clr-Very-dark-blue: hsl(224, 21%, 14%);
+
+    --fw-b: 800;
+}
+
+@font-face{
+    font-family: 'pjs';
+    src: url('./assets/fonts/PlusJakartaSans-VariableFont_wght.ttf');
+}
+
+body{
+    min-height: max(100vh, 991px);
+    font-family: 'pjs';
+    font-size: 16px;
+    font-weight: 500;
+    background-color: var(--clr-Very-light-grayish-blue);
+    color: var(--clr-Dark-grayish-blue);
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page{
+    background-color: var(--clr-White);
+    padding: 30px;
+    width: min(730px, 100%);
+    border-radius: 1rem;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.message{
+    display: flex;
+    padding: 15px 20px;
+    margin-block: 5px;
+    border-radius: 0.5rem;
+}
+
+.col{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.club{
+    color: var(--clr-Blue);    
+}
+
+.club, .post, .name{
+    font-size: 1.1rem;
+    font-weight: var(--fw-b);
+    cursor: pointer;
+}
+
+.mark:hover, .post:hover, .name:hover{
+    color: var(--clr-Blue);
+    cursor: pointer;
+}
+
+.post{
+    color: var(--clr-Dark-grayish-blue);
+}
+
+.name{
+    color: var(--clr-Very-dark-blue);
+}
+
+.mark{
+    font-size: 1.1rem;
+}
+
+.unread{
+    background-color: var(--clr-Very-light-grayish-blue);
+}
+
+h1{
+    color: var(--clr-Very-dark-blue);
+    font-size: 1.6rem;
+    font-weight: var(--fw-b);
+    span{
+        color: var(--clr-White);
+        background-color: var(--clr-Blue);
+        border-radius: 0.3rem;
+        padding:3px 10px;
+    }
+}
+
+.row:first-of-type{
+    margin-block: 5px 30px;
+}
+
+.avatar{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.right-side img{
+    max-width: 3rem;
+    border-radius: 0.5rem;
+    padding: 2px;
+}
+
+.right-side img:hover{
+    cursor: pointer;
+    border: 1px solid var(--clr-Light-grayish-blue-1);
+}
+
+.time{
+    color: var(--clr-Grayish-blue);
+}
+
+.words{
+    border: 1px solid var(--clr-Grayish-blue);
+    margin-top: 1rem;
+    padding: 20px;
+    line-height: 1.5;
+    border-radius: 0.5rem;
+}
+
+.words:hover{
+    background-color: var(--clr-Light-grayish-blue-1);
+    cursor: pointer;
+    border: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.unread p:first-of-type{
+    position: relative;
+}
+.unread p:first-of-type::after{
+    content: "";
+    width: 5px;
+    height: 5px;
+    background-color: var(--clr-Red);
+    position: absolute;
+    right: -1rem;
+    top: 0.6rem;
+    z-index: 10;
+    overflow: visible;
+    border-radius: 50%;
+}
+
+@media (width < 410px){
+    body{
+        font-size: 13px;
+    }
+    main{
+        align-items: flex-start;
+    }
+    .page{
+        padding: 10px;
+        padding-top: 3rem;
+    }
+    h1{
+        font-size: 1.2em;
+    }
+    .mark, .club, .name, .post{
+        font-size: 1.05em;
+    }
+    .message, .words{
+        padding: 10px;
+    }
+    .avatar{
+        margin-right: 10px;
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    .unread p:first-of-type::after{
+        right: -5px;
+    }
+    .right-side img{
+        width: 2.5rem;
+    }
+}
+
+    .attribution { 
+        font-size: 11px; 
+        text-align: center; 
+    }
+    .attribution a { color: hsl(228, 45%, 44%); }
